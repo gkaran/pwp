@@ -1,10 +1,30 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import ProfileCard from '../components/profile-card';
-
+import ProfileCard from '../components/profile-card'
+import styled from 'styled-components'
 import Header from '../components/header'
 import './index.css'
+import Footer from '../components/footer'
+
+const Container = styled.div`
+  margin: 0 auto;
+  max-width: 960px;
+  padding: '0px 1.0875rem 1.45rem',
+  padding-top: 0
+`;
+
+const BodyContainer = styled.div`
+  display: flex;
+`;
+
+const ChildrenContainer = styled.div`
+  flex: 1 1 100%;
+`;
+
+const ProfileCardContainer = styled.div`
+  flex: 0 0 200px;
+`;
 
 const Layout = ({ children, data }) => (
   <div>
@@ -15,23 +35,16 @@ const Layout = ({ children, data }) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    <Header siteTitle={data.site.siteMetadata.title} />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-        display: 'flex'
-      }}
-    >
-      <div style={{flex: '1 1 100%'}}>
-      {children()}
-      </div>
-      <div style={{ flex: '0 0 180px' }}>
-        <ProfileCard author={data.site.siteMetadata.author}/>
-      </div>
-    </div>
+    <Header siteTitle={data.site.siteMetadata.title}/>
+    <Container>
+      <BodyContainer>
+        <ChildrenContainer>{children()}</ChildrenContainer>
+        <ProfileCardContainer>
+          <ProfileCard author={data.site.siteMetadata.author}/>
+        </ProfileCardContainer>
+      </BodyContainer>
+      <Footer github={data.site.siteMetadata.author.mediaLinks.github}/>
+    </Container>
   </div>
 )
 
@@ -49,6 +62,9 @@ export const query = graphql`
         author {
           name
           shortDesc
+          mediaLinks {
+            github
+          }
         }
       }
     }
