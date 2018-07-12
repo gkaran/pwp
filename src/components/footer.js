@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import GitHubIcon from './github-icon'
+import LinkedInIcon from './linked-in-icon'
 
 const Container = styled.div`
   margin-top: 30px;
@@ -13,16 +14,19 @@ const Container = styled.div`
 
 const SocialIcons = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-content: center;
+  
+  * + * {
+    margin-left: 10px;
+  }
 `;
 
-const SocialIcon = styled.div`
-`
-
-const Footer = ({github}) => (
+const Footer = ({github, linkedIn}) => (
   <Container>
     <SocialIcons>
       {github && <GitHubIcon github={github}/>}
+      {linkedIn && <LinkedInIcon linkedIn={linkedIn}/>}
     </SocialIcons>
   </Container>
 )

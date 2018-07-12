@@ -29,10 +29,10 @@ const Wrapper = styled.a`
 `;
 
 
-const GitHubIcon = ({github}) => (
-  <Wrapper href={`https://github.com/${github}`} target={'_blank'}>
-    <i className='fa fa-fw fa-2x fa-github'/>
+const LinkedInIcon = ({ github, linkedIn }) => (
+  <Wrapper href={`https://linkedin.com/in/${linkedIn}`} target={'_blank'}>
+    <i className='fa fa-fw fa-2x fa-linkedin' />
   </Wrapper>
 );
 
-export default GitHubIcon;
+export default LinkedInIcon;

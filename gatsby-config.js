@@ -10,7 +10,7 @@ module.exports = {
         facebook: '',
         github: 'gkaran',
         twitter: '',
-        linkedIn: ''
+        linkedIn: 'gkaran'
       }
     }
   },

@@ -5,6 +5,7 @@ import ProfileCard from '../components/profile-card'
 import styled from 'styled-components'
 import Header from '../components/header'
 import './index.css'
+import 'font-awesome/css/font-awesome.min.css';
 import Footer from '../components/footer'
 
 const Container = styled.div`
@@ -43,7 +44,10 @@ const Layout = ({ children, data }) => (
           <ProfileCard author={data.site.siteMetadata.author}/>
         </ProfileCardContainer>
       </BodyContainer>
-      <Footer github={data.site.siteMetadata.author.mediaLinks.github}/>
+      <Footer
+        github={data.site.siteMetadata.author.mediaLinks.github}
+        linkedIn={data.site.siteMetadata.author.mediaLinks.linkedIn}
+      />
     </Container>
   </div>
 )
@@ -63,7 +67,8 @@ export const query = graphql`
           name
           shortDesc
           mediaLinks {
-            github
+            github,
+            linkedIn
           }
         }
       }
