@@ -29,7 +29,7 @@ const Wrapper = styled.a`
 
 
 const LinkedInIcon = ({ github, linkedIn }) => (
-  <Wrapper href={`https://linkedin.com/in/${linkedIn}`} target={'_blank'}>
+  <Wrapper href={`https://linkedin.com/in/${linkedIn}`} target={'_blank'} rel={'noopener'}>
     <i className='fa fa-fw fa-2x fa-linkedin' />
   </Wrapper>
 );

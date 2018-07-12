@@ -29,7 +29,7 @@ const Wrapper = styled.a`
 
 
 const GitHubIcon = ({github}) => (
-  <Wrapper href={`https://github.com/${github}`} target={'_blank'}>
+  <Wrapper href={`https://github.com/${github}`} target={'_blank'} rel={'noopener'}>
     <i className='fa fa-fw fa-2x fa-github'/>
   </Wrapper>
 );
