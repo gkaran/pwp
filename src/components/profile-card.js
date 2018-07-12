@@ -1,11 +1,30 @@
 import React from 'react'
+import styled from 'styled-components';
+
+const Container = styled.div`
+  background: #36373c;
+  color: white;
+  border-radius: 2px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0,.2);
+`;
+
+const ProfilePic = styled.img`
+  margin-bottom: 0;
+`;
+
+const ShortDesc = styled.p`
+  font-size: .8rem;
+  line-height: 1rem;
+`;
 
 const ProfileCard = ({author}) => (
-  <div style={{ boxShadow: '2px 2px 2px 2px #ccc', borderRadius: 5, padding: 10, textAlign: 'center' }}>
+  <Container>
     <h3>About me</h3>
-    <img style={{ marginBottom: 0 }} src='https://res.cloudinary.com/dzvutmr06/image/upload/c_fill,ar_1:1,g_auto,r_max,b_rgb:FFFFFF/v1531310594/20171229_112320_e5f0zb.jpg' />
-    {author? <p>{author.shortDesc}</p> : ``}
-  </div>
+    <ProfilePic src='https://res.cloudinary.com/dzvutmr06/image/upload/c_fill,ar_1:1,g_auto,r_max,b_rgb:36373c/v1531310594/20171229_112320_e5f0zb.jpg' />
+    {author && <ShortDesc>{author.shortDesc}</ShortDesc>}
+  </Container>
 )
 
 export default ProfileCard

@@ -2,7 +2,7 @@ const authorName = 'George Karanikas';
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: authorName,
     author: {
       name: authorName,
       shortDesc: `Hi, my name is ${authorName} and I'm a huge pile of crap`,

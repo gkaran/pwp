@@ -6,8 +6,8 @@ import LinkedInIcon from './linked-in-icon'
 const Container = styled.div`
   margin-top: 30px;
   padding: 20px;
-  background: #EFEFEF;
-  border-radius: 6px;
+  background: #36373c;
+  border-radius: 2px;
   border: 1px solid rgba(0,0,0,.1);
   box-shadow: 0 2px 2px rgba(0,0,0,.2); 
 `;

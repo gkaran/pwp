@@ -11,8 +11,8 @@ import Footer from '../components/footer'
 const Container = styled.div`
   margin: 0 auto;
   max-width: 960px;
-  padding: '0px 1.0875rem 1.45rem',
-  padding-top: 0
+  padding: 0px 1.0875rem 1.45rem;
+  padding-top: 0;
 `;
 
 const BodyContainer = styled.div`
