@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components';
 
 const Container = styled.div`
-  background: #36373c;
-  color: white;
+  background: ${props => props.theme.brand};
+  color: ${props => props.theme.brandInverse};
   border-radius: 2px;
   padding: 10px;
   text-align: center;

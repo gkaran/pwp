@@ -11,11 +11,10 @@ const Wrapper = styled.a`
   align-items: center;
   text-decoration: none;
   border: 1px solid rgba(0,0,0,0);
-  color: white;
+  color: ${props => props.theme.brandInverse};
   
   &:hover {
-    background-color: black;
-    background-color: #000;
+    background-color: ${props => props.theme.brand};
     border: 1px solid rgba(0,0,0,.1);
     box-shadow: 0 0 20px 4px rgb(156, 156, 156);
     animation: jump .5s linear alternate infinite;

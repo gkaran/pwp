@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 import styled from 'styled-components';
 
 const Container = styled.div`
-  background-color: #36373c;
+  background-color: ${props => props.theme.brand};
   margin-bottom: 1.45rem;
 `;
 
@@ -18,7 +18,7 @@ const PageTitle = styled.h1`
 `;
 
 const PageTitleLink = styled(Link)`
-  color: white;
+  color: ${props => props.theme.brandInverse};
   text-decoration: none;
 `
 
