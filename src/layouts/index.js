@@ -46,10 +46,7 @@ const Layout = ({ children, data }) => (
             <ProfileCard author={data.site.siteMetadata.author} />
           </ProfileCardContainer>
         </BodyContainer>
-        <Footer
-          github={data.site.siteMetadata.author.mediaLinks.github}
-          linkedIn={data.site.siteMetadata.author.mediaLinks.linkedIn}
-        />
+        <Footer mediaLinks={data.site.siteMetadata.mediaLinks} />
       </Container>
     </div>
   </ThemeProvider>
@@ -69,10 +66,11 @@ export const query = graphql`
         author {
           name
           shortDesc
-          mediaLinks {
-            github,
-            linkedIn
-          }
+        }
+        mediaLinks {
+          name
+          url
+          icon
         }
       }
     }

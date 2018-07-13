@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import GitHubIcon from './github-icon'
-import LinkedInIcon from './linked-in-icon'
+import SocialIcon from './social-icon'
 
 const Container = styled.div`
   margin-top: 30px;
@@ -22,13 +21,16 @@ const SocialIcons = styled.div`
   }
 `;
 
-const Footer = ({github, linkedIn}) => (
+const Footer = ({mediaLinks}) => (
   <Container>
     <SocialIcons>
-      {github && <GitHubIcon github={github}/>}
-      {linkedIn && <LinkedInIcon linkedIn={linkedIn}/>}
+      {mediaLinks.map(({icon, name, url}) => <SocialIcon icon={icon} name={name} url={url} />)}
     </SocialIcons>
   </Container>
 )
+
+Footer.defaultProps = {
+  mediaLinks: []
+}
 
 export default Footer;
